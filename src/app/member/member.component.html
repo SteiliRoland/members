@@ -1,4 +1,12 @@
-
+<!--
+File: member.component.html
+Author: Steili Roland
+Copyright: 2021, Nagy János
+Group: Szoft II/N
+Date: 2022-03-31
+Github: https://github.com/SteiliRoland/
+Licenc: GNU GPL
+-->
 <form [formGroup]="memberForm" (ngSubmit)="saveMember()">
 
     <div class="mb-3">
@@ -6,6 +14,7 @@
         <input type="text" class="form-control" id="name" 
         formControlName="name"
         placeholder="Vezetéknév Keresztnév">
+        <small *ngIf="memberForm.controls['name'].invalid && memberForm.controls['name'].touched">Név kötelező</small>
     </div>
 
     <div class="mb-3">
@@ -13,6 +22,7 @@
         <input type="text" class="form-control" id="city" 
         formControlName="city"
         placeholder="Település neve">
+        <small *ngIf="memberForm.controls['city'].invalid && memberForm.controls['city'].touched">Város kötelező</small>
     </div>
 
     <div class="mb-3">
@@ -20,6 +30,7 @@
         <input type="text" class="form-control" id="address" 
         formControlName="address"
         placeholder="Cím">
+        <small *ngIf="memberForm.controls['address'].invalid && memberForm.controls['address'].touched">Cím kötelező</small>
     </div>
 
     <div class="mb-3">
@@ -27,6 +38,7 @@
         <input type="text" class="form-control" id="email" 
         formControlName="email"
         placeholder="E-mail cím">
+        <small *ngIf="memberForm.controls['email'].invalid && memberForm.controls['email'].touched">Email kötelező</small>
     </div>
 
     <div>
